@@ -16,9 +16,10 @@ gulp.task('prefixes', function (){
 });
 
 gulp.task('htmlMini', function(){
-	gulp.src(src(src_html))
+	gulp.src(src_html)
 		.pipe(gulpHtmlMini({
 			collapseWhitespace: true,
 			minifyCSS: true
 		}))
+		.pipe(gulp.dest(dest_html))
 });

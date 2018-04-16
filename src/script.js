@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import './style.css';
+
 //jshint esnext:true
 $(document).ready(function() {
   var firstLineArr = [];
@@ -182,7 +185,7 @@ $(document).ready(function() {
     
     function signs(sign){
       signLocation = [];
-      for(i = 0; i<opArr.length; i++){
+      for(var i = 0; i<opArr.length; i++){
         if(opArr[i] === sign){
           signLocation.push(i);
         }
@@ -193,7 +196,7 @@ $(document).ready(function() {
     
     signs("^");
       if(signLocation[0] !== undefined){
-        for(i=signLocation.length-1; i>-1; i--){
+        for(var i=signLocation.length-1; i>-1; i--){
           numArr[signLocation[i]] = powerOf(numArr[signLocation[i]], numArr[signLocation[i]+1]);
           numArr.splice(signLocation[i]+1, 1);
         }
@@ -201,7 +204,7 @@ $(document).ready(function() {
     
     signs("*");
       if(signLocation[0] !== undefined){
-        for(i=signLocation.length-1; i>-1; i--){
+        for(var i=signLocation.length-1; i>-1; i--){
           numArr[signLocation[i]] = multiply(numArr[signLocation[i]], numArr[signLocation[i]+1]);
           numArr.splice(signLocation[i]+1, 1);
         }
@@ -209,7 +212,7 @@ $(document).ready(function() {
     
     signs("&divide;");
       if(signLocation[0] !== undefined){
-        for(i=signLocation.length-1; i>-1; i--){
+        for(var i=signLocation.length-1; i>-1; i--){
           numArr[signLocation[i]] = divide(numArr[signLocation[i]], numArr[signLocation[i]+1]);
           numArr.splice(signLocation[i]+1, 1);
         }
@@ -217,7 +220,7 @@ $(document).ready(function() {
 
     opArr.reverse();
     numArr.reverse();
-    for(i=opArr.length-1; i>-1; i--){
+    for(var i=opArr.length-1; i>-1; i--){
       if(opArr[i] === "+"){
         numArr[i] = add(numArr[i+1], numArr[i]);
         numArr.splice(i+1, 1);
@@ -327,7 +330,7 @@ $("#zero").on('click', function(){
   if(equalsBool){ return; }
     var zero = 0;
   if(firstLineArr.length<2){
-  for(i=0; i<firstLineArr.length; i++){
+  for(var i=0; i<firstLineArr.length; i++){
     if(firstLineArr[i] === 0){zero++}
     if (zero>=1){ return; }
   }
@@ -342,7 +345,7 @@ $("#zero").on('click', function(){
 $("#decimal").on('click', function(){
   if(equalsBool){ return; }
   var decimal = 0;
-  for(i=0; i<firstLineArr.length; i++){
+  for(var i=0; i<firstLineArr.length; i++){
     if(firstLineArr[i] === "."){decimal++}
     if (decimal>=1){ return; }
   }
@@ -517,7 +520,7 @@ $("#equals").on('click', function(){
     numArr = [];
     opArr = [];
     secondLineArrBackUp = [];
-    for(i=0; i<secondLineArr.length; i++){
+    for(var i=0; i<secondLineArr.length; i++){
       secondLineArrBackUp[i] = secondLineArr[i];
     }
     equals(secondLineArr);

@@ -12,9 +12,9 @@ module.exports = {
 	},
 	module: {
 		rules: [{
-			test: /\.js$/.
+			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: 'bable-loader',
+			loader: 'babel-loader',
 			query: {
 				presets: ['env']
 			}

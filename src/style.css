@@ -2,8 +2,12 @@ html, body{
   height: 100%;
 }
 body {
+   background: -webkit-gradient(linear,left top, right bottom,from(#00aaff), to(#99ffcc));
+   background: -webkit-linear-gradient(top left,#00aaff, #99ffcc);
+   background: -moz-linear-gradient(top left,#00aaff, #99ffcc);
    background: linear-gradient(to bottom right,#00aaff, #99ffcc);
-  background-size: 2400px;
+  -moz-background-size: 2400px;
+       background-size: 2400px;
   background-repeat: no-repeat;
 }
 #title{
@@ -14,9 +18,13 @@ body {
 #calculator{
   width: 350px;
   height: 457px;
-  border-radius: 12px;
+  -webkit-border-radius: 12px;
+     -moz-border-radius: 12px;
+          border-radius: 12px;
   Background: linear-gradient(#b3b3b3 95%, #8c8c8c , #cccccc);
-  box-shadow: 0 4px 8px 0 #4d4d4d, 0 6px 20px 0 #999999;
+  -webkit-box-shadow: 0 4px 8px 0 #4d4d4d, 0 6px 20px 0 #999999;
+     -moz-box-shadow: 0 4px 8px 0 #4d4d4d, 0 6px 20px 0 #999999;
+          box-shadow: 0 4px 8px 0 #4d4d4d, 0 6px 20px 0 #999999;
   border: 2px solid #999999;
   margin-top:  5%;
   margin-left: auto;
@@ -28,7 +36,9 @@ body {
   background: #b3cccc;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 4px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
   border: 2px solid #999999;
   padding-right: 10px;
 }
@@ -57,7 +67,9 @@ body {
   height: 40px;
   padding:5px 10px;
   Background: linear-gradient(#c2c2d6 94%, #d1d1e0 , #e0e0eb);
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
   font-size: 20px;
